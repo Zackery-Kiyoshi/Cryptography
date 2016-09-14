@@ -11,8 +11,12 @@ object General {
   def main(args: Array[String]): Unit = {
     
     var cc = new CaesarCipher()
-    var s = cc.encrypt(1,"abcdefghijklmnopqrstuvwxyz")
-    //println(s)
+    var ccs = new CaesarCipherSolver()
+    var s = cc.encrypt(1,"abcdefghijklmnopqrstuvwxya",5,"a")
+    var sp = cc.decrypt(1,s,true)
+    //ccs.solveBruteForceInt(s)
+    println(s )
+    println(sp)
     s = cc.encrypt("mockingbird","abcdefghijklmnopqrstuvwxyz")
     //println(s)
     

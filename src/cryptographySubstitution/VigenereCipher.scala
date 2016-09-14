@@ -1,0 +1,5 @@
+package cryptographySubstitution
+
+class VigenereCipher {
+  
+}
