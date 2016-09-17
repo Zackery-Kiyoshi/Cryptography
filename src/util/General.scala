@@ -7,17 +7,23 @@ import cryptographyTransposition.ColumnarTransposition
 import cryptanalysisSubstitution.CaesarCipherSolver
 import cryptanalysisTransposition.ColumnarTranspositionSolver
 import scala.io.StdIn.{readInt,readBoolean}
+import scala.io.Source
+import java.io.{FileReader, FileNotFoundException, IOException}
 
 object General {
   def main(args: Array[String]): Unit = {
+    
     var str = false
     var cc = new CaesarCipher()
     var ccs = new CaesarCipherSolver()
+    var dic = new Dictionary()
+    
     var i:Integer = -1
     var k:String = ""
     println("e : Encrypt")
     println("d : Decrypt")
     println("s : Solve with human assistance")
+    println("c : check if a blocked text is English words")
     var s = readLine("")
     //val n = readInt()
     while(s != ""){
@@ -48,6 +54,9 @@ object General {
       }else if(s == "s"){
           s = readLine("Message: ")
           ccs.solveBruteForceInt(s)
+      }else if(s == "c"){
+        s = readLine("Message to check: ")
+        println(dic.checkEnglish(s) )
       }
       println()
       // reset
@@ -55,6 +64,7 @@ object General {
       println("e : Encrypt")
       println("d : Decrypt")
       println("s : Solve with human assistance")
+      println("c : check if a blocked text is English words")
       s = readLine("")
     }
     
