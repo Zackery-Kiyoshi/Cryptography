@@ -13,7 +13,7 @@ class Dictionary {
     try {
       for (line <- Source.fromFile(filename).getLines()) {
         words += ( line.trim() -> true )
-        //println(line)
+        println(line)
       }
     } catch {
       case ex: FileNotFoundException => println("Couldn't find that file.")
@@ -23,11 +23,13 @@ class Dictionary {
   }
   
   def checkEnglish(s:String):Boolean = {
-    return checkForWordsRec(s,1,0)
+    var str = s.replace(" ","").trim()
+    return checkForWordsRec(str,1,0)
   }
   
   def checkForWordsRec(s:String, cur:Integer, start:Integer): Boolean = {
     var ret = false
+    //println("'" + s + "'")
     if(cur == s.length){
       // reached the last char (base case)
       var str = s.substring(start, cur)
@@ -39,11 +41,15 @@ class Dictionary {
     else if(cur == start){
       return checkForWordsRec(s,cur+1,start)
     }else{
-      var str = s.substring(start, cur)
-      if(checkWord(str)){
-        return checkForWordsRec(s,cur+2,cur+1) || checkForWordsRec(s,cur+1,start)
-      }else{
-        return checkForWordsRec(s,cur+1,start)
+      if(cur < s.length){
+        var str = s.substring(start, cur)
+        //println(str)
+        if(checkWord(str)){
+          println("Word: " + str)
+          return checkForWordsRec(s,cur+2,cur+1) || checkForWordsRec(s,cur+1,start)
+        }else{
+          return checkForWordsRec(s,cur+1,start)
+        }
       }
     }
     return ret

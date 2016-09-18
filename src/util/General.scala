@@ -17,15 +17,22 @@ object General {
     var cc = new CaesarCipher()
     var ccs = new CaesarCipherSolver()
     var dic = new Dictionary()
+    dic.getDictionaryFromFile("words",false)
     
     var i:Integer = -1
     var k:String = ""
+    
+    println(dic.checkWord("e"))
+    println(dic.checkForWordsRec("fucker", 5, 0) )
+    //println(dic.checkEnglish("fucker") )
+    
     println("e : Encrypt")
     println("d : Decrypt")
     println("s : Solve with human assistance")
     println("c : check if a blocked text is English words")
     var s = readLine("")
     //val n = readInt()
+    
     while(s != ""){
       println()
       if(s == "e"){
