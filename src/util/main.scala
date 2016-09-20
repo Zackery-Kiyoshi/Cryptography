@@ -89,7 +89,7 @@ object General {
     var s = cc.encrypt(1,"abcdefghijklmnopqrstuvwxyz")
     var sp = cc.decrypt(1,s)
     //ccs.solveBruteForceInt(s)
-    println(s )
+    println(s)
     println(sp)
     s = cc.encrypt("mockingbird","abcdefghijklmnopqrstuvwxyz")
     //println(s)
