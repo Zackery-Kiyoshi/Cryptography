@@ -10,7 +10,7 @@ import scala.io.StdIn.{readInt,readBoolean}
 import scala.io.Source
 import java.io.{FileReader, FileNotFoundException, IOException}
 
-object General extends App{
+object main extends App{
   //def main(args: Array[String]): Unit = {
     
     var str = false
