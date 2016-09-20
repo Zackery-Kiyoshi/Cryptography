@@ -10,8 +10,8 @@ import scala.io.StdIn.{readInt,readBoolean}
 import scala.io.Source
 import java.io.{FileReader, FileNotFoundException, IOException}
 
-object General {
-  def main(args: Array[String]): Unit = {
+object General extends App{
+  //def main(args: Array[String]): Unit = {
     
     var str = false
     var cc = new CaesarCipher()
@@ -37,7 +37,7 @@ object General {
     while(s != ""){
       println()
       if(s == "e"){
-        test()
+        //test()
       }else if(s == "e"){
         k = readLine("Key: ")
         try{
@@ -80,9 +80,9 @@ object General {
       s = readLine("")
     }
     
-  }
+  //}
   
-  
+  /*
   def test(){
     var cc = new CaesarCipher()
     var ccs = new CaesarCipherSolver()
@@ -103,5 +103,5 @@ object General {
     s = ctcs.displayColumns(5,s)
     //println(s)
   }
-  
+  */
 }
