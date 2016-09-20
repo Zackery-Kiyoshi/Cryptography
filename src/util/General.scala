@@ -22,14 +22,15 @@ object General {
     var i:Integer = -1
     var k:String = ""
     
-    println(dic.checkWord("e"))
-    println(dic.checkForWordsRec("fucker", 5, 0) )
+    //println(dic.checkWord("e"))
+    //println(dic.checkForWordsRec("fucker", 5, 0) )
     //println(dic.checkEnglish("fucker") )
     
-    println("e : Encrypt")
-    println("d : Decrypt")
-    println("s : Solve with human assistance")
-    println("c : check if a blocked text is English words")
+    println("e  : Encrypt")
+    println("d  : Decrypt")
+    println("sh : Solve with human assistance")
+    println("c  : Check if a blocked text is English words")
+    println("sc : Solve with computer assistance")
     var s = readLine("")
     //val n = readInt()
     
@@ -58,20 +59,24 @@ object General {
         s = readLine("Message: ")
           var sp = cc.decrypt(1,s)
           println("D(m) = " + sp)
-      }else if(s == "s"){
+      }else if(s == "sh"){
           s = readLine("Message: ")
           ccs.solveBruteForceInt(s)
       }else if(s == "c"){
         s = readLine("Message to check: ")
         println(dic.checkEnglish(s) )
+      }else if(s == "sc"){
+        s = readLine("Message: ")
+        println(dic.checkEnglish(s) )
       }
       println()
       // reset
       str = false
-      println("e : Encrypt")
-      println("d : Decrypt")
-      println("s : Solve with human assistance")
-      println("c : check if a blocked text is English words")
+      println("e  : Encrypt")
+      println("d  : Decrypt")
+      println("sh : Solve with human assistance")
+      println("c  : Check if a blocked text is English words")
+      println("sc : Solve with computer assistance")
       s = readLine("")
     }
     
